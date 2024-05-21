@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: rgb(13, 13, 13);
+}
+.box {
+    border-radius: 20px;
+    width: 450px;
+    height: 100px; /* Aggiunto l'altezza per rendere visibile il div */
+    background-color: green;
+}
+
+.box-red {
+    border-radius: 20px;
+    width: 350px;
+    height: 100px; /* Aggiunto l'altezza per rendere visibile il div */
+    background-color: red;
+}
+
+.box-blue {
+    border-radius: 20px;
+    width: 250px;
+    height: 100px; /* Aggiunto l'altezza per rendere visibile il div */
+    background-color: blue;
+}
+
+.box-gray {
+    border-radius: 20px;
+    width: 150px;
+    height: 100px; /* Aggiunto l'altezza per rendere visibile il div */
+    background-color: gray;
+}
