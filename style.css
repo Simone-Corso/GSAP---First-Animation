@@ -1,37 +1,63 @@
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0;
-    min-height: 100vh;
-    overflow: hidden;
-    background-color: rgb(13, 13, 13);
-}
-.box {
-    border-radius: 20px;
-    width: 450px;
-    height: 100px; /* Aggiunto l'altezza per rendere visibile il div */
-    background-color: green;
+body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    background-color: rgb(35, 34, 34);
+
 }
 
-.box-red {
-    border-radius: 20px;
-    width: 350px;
-    height: 100px; /* Aggiunto l'altezza per rendere visibile il div */
-    background-color: red;
+
+h1 {
+  font-size: 36px;
 }
 
-.box-blue {
-    border-radius: 20px;
-    width: 250px;
-    height: 100px; /* Aggiunto l'altezza per rendere visibile il div */
-    background-color: blue;
+h2 {
+  font-size: 30px;
+  text-align: center;
 }
 
-.box-gray {
-    border-radius: 20px;
-    width: 150px;
-    height: 100px; /* Aggiunto l'altezza per rendere visibile il div */
-    background-color: gray;
+h3 {
+  font-size: 24px;
 }
+
+p {
+  line-height: 22px;
+  margin-bottom: 16px;
+  width: 650px;
+}
+
+#demo {
+  height: 100%;
+  position: relative;
+  display: inline-block;
+}
+.box-green {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 6px;
+  margin-top: 4px;
+  display: inline-block;
+  background-color: green;
+}
+
+.box-purple {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 6px;
+    margin-top: 4px;
+    display: inline-block;
+    background-color: purple;
+  }
+
+  .box-orange{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 6px;
+    margin-top: 4px;
+    display: inline-block;
+    background-color: orange;
+  }
