@@ -1,46 +1,50 @@
-body{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:100vh;
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     background-color: rgb(35, 34, 34);
-
 }
+
+
+
 
 
 h1 {
-  font-size: 36px;
+    font-size: 36px;
 }
 
 h2 {
-  font-size: 30px;
-  text-align: center;
-  color: white;
+    font-size: 30px;
+    text-align: center;
+    color: white;
 }
 
 h3 {
-  font-size: 24px;
+    font-size: 24px;
 }
 
 p {
-  line-height: 22px;
-  margin-bottom: 16px;
-  width: 650px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    width: 650px;
 }
 
 #demo {
-  height: 100%;
-  position: relative;
-  display: inline-block;
+    height: 100%;
+    position: relative;
+    display: inline-block;
 }
+
 .box-green {
-  width: 50px;
-  height: 50px;
-  position: relative;
-  border-radius: 6px;
-  margin-top: 4px;
-  display: inline-block;
-  background-color: green;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 6px;
+    margin-top: 4px;
+    display: inline-block;
+    background-color: #ecebf3;
+
 }
 
 .box-purple {
@@ -50,15 +54,15 @@ p {
     border-radius: 6px;
     margin-top: 4px;
     display: inline-block;
-    background-color: purple;
-  }
+    background-color: #c7d6d5;
+}
 
-  .box-orange{
+.box-orange {
     width: 50px;
     height: 50px;
     position: relative;
     border-radius: 6px;
     margin-top: 4px;
     display: inline-block;
-    background-color: orange;
-  }
+    background-color: #6d7275;
+}
