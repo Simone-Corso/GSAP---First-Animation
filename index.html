@@ -2,44 +2,72 @@
 <html lang="it">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>GSAP Example</title>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>GSAP Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 </head>
 
 <body>
-    <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
-    <div id="demo">
-        <h2>My name is, Simone</h2>
-        <div class="box-green"></div>
-        <div class="box-purple"></div>
-        <div class="box-orange"></div>
-        <div class="box-green"></div>
-        <div class="box-purple"></div>
-        <div class="box-orange"></div>
-        <div class="box-green"></div>
-        <div class="box-purple"></div>
-    </div>
+  <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+  <div id="demo">
+    <h2>My name is, Simone</h2>
+    <div class="box-green"></div>
+    <div class="box-purple"></div>
+    <div class="box-orange"></div>
+    <div class="box-green"></div>
+    <div class="box-purple"></div>
+    <div class="box-orange"></div>
+    <div class="box-green"></div>
+    <div class="box-purple"></div>
+  </div>
 
-    <script>
-        gsap.registerEffect({
-            name: "fade",
-            defaults: { duration: 2 },
-            effect: (targets, config) => {
-                return gsap.to(targets, { duration: config.duration, opacity: 0 });
-            }
+  <script>
+    // Funzione di ciclismo del colore personalizzato
+    function cycleColor(element, duration, startColor, endColor) {
+      gsap.to(element, {
+        duration,
+        ease: "power3.inOut", // Regola la facilità per transizioni di colore più fluide
+        backgroundColor: `hsl(${gsap.utils.random(0, 360)}, 100%, 50%)`, //random
+      })
+      .to(element, { // Cambia colore a random
+        duration: duration / 2, // Durate del cambiamento
+        ease: "power2.inOut",
+        backgroundColor: startColor,
+      })
+      .to(element, { // Un altro colore diverso fine ciclo
+        duration: duration / 2,
+        ease: "power2.inOut",
+        backgroundColor: endColor,
+      });
+    }
+
+    gsap.registerEffect({
+      name: "fade",
+      defaults: { duration: 2 },
+      effect: (targets, config) =>
+        gsap.to(targets, { duration: config.duration, opacity: 0 }),
+    });
+
+    document.querySelectorAll(".box-green, .box-purple, .box-orange").forEach(function (box) {
+      box.addEventListener("mouseenter", function () {
+        // Selezioni tutti i box che voglio cambiare
+        gsap.effects.fade(this);
+
+        // Rimangono i box visibili 
+        const remainingBoxes = document.querySelectorAll(
+          "#demo > .box-green:not(:hover), #demo > .box-purple:not(:hover), #demo > .box-orange:not(:hover)"
+        );
+
+        // Colore che rimane in animation
+        remainingBoxes.forEach((box) => {
+          const randomDuration = gsap.utils.random(1, 3); // Durata Randomica
+          cycleColor(box, randomDuration, "#6d7275", "#ecebf3");
         });
-
-
-        document.querySelectorAll(".box-green,box-purple,box-orange").forEach(function (box) {
-            box.addEventListener("mouseenter", function () {
-                gsap.effects.fade(this);
-            });
-        });
-    </script>
+      });
+    });
+  </script>
 </body>
 
 </html>
